@@ -1,0 +1,97 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+		<script src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+		<script src="https://kit.fontawesome.com/59c381a832.js"></script>
+
+		<style type="text/css">
+			a:hover {
+    			cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+  			<div class="row h-100 justify-content-center align-items-center">
+    			<div class="col-md-6 col-sm-10">
+    				<div class="card shadow p-3 mb-5 bg-white rounded">
+    					<h2 class="card-title text-center">Register</h2>
+	    				<form class="my-md-3 mx-md-3" method="POST">
+				  			<div class="form-row">
+				    			<div class="form-group col-md-6">
+				      				<label for="inputFirstName">First Name:</label>
+				      				<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" autocomplete="off">
+				    			</div>
+				    			<div class="form-group col-md-6">
+				      				<label for="inputLastName">Last Name:</label>
+				      				<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" autocomplete="off">
+				    			</div>
+				  			</div>
+				  			<div class="form-group">
+				    			<label for="inputEmail">Email:</label>
+				    			<input type="email" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off">
+				  			</div>
+				  			<div class="form-group">
+				    			<label for="inputPassword">Password:</label>
+				    			<input type="password" class="form-control" id="inputPassword" placeholder="********" autocomplete="off">
+				  			</div>
+				  			<div class="form-group">
+						    	<div class="form-check">
+						      		<input class="form-check-input" type="checkbox" id="employerCheck">
+						      		<label class="form-check-label" for="employerCheck">
+						        		I am an employer.
+						      		</label>
+						    	</div>
+						  	</div>
+						 	<div class="form-group">
+						    	<div class="form-check">
+						      		<input class="form-check-input" type="checkbox" id="termsCheck">
+						      		<label class="form-check-label" for="termsCheck">
+						        		I agree to the <a data-toggle="modal" data-target="#termsOfUseModal"><u>terms of use</u></a>.
+						      		</label>
+						    	</div>
+						  	</div>
+						  	<div class="form-row">
+						  		<div class="form-group col-md-6">
+						  			<button type="button" id="submit-btn" class="btn btn-primary">Sign up</button>
+						  		</div>
+						  		<div class="form-group col-md-6 text-right">
+						  			<a href="login.html">Already have an account?</a>
+						  		</div>
+						  	</div>
+						  	<div class="form-row" id="errors">
+						  	</div>
+						</form>
+					</div>
+    			</div>
+  			</div>
+		</div>
+
+		<div class="modal fade" id="termsOfUseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  			<div class="modal-dialog modal-dialog-scrollable" role="document">
+    			<div class="modal-content">
+     				<div class="modal-header">
+        				<h5 class="modal-title" id="exampleModalScrollableTitle">Terms of use</h5>
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         					<span aria-hidden="true">&times;</span>
+        				</button>
+      				</div>
+      				<div class="modal-body">
+      					Some text here(scrollable).
+      				</div>
+      				<div class="modal-footer">
+        				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      				</div>
+    			</div>
+  			</div>
+		</div>
+		
+		<script type="text/javascript" src="scripts/requests.js"></script>
+		<script type="text/javascript" src="scripts/register.js"></script>
+	</body>
+
+</html>

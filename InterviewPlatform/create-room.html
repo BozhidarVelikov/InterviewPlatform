@@ -1,0 +1,213 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+		<script src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+		<script src="https://kit.fontawesome.com/59c381a832.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/pointer.css">
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand text-primary my-md-2" href="home.html">My Website</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+ 			 </button>
+
+      		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+      				<li class="nav-item">
+        				<a class="nav-link" href="home.html">Home</a>
+      				</li>
+      				<li class="nav-item active">
+        				<a class="nav-link" href="#">Create room <span class="sr-only">(current)</span></a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="create-review.html" id="menu-reviews">Create review</a>
+      				</li>
+    			</ul>
+    			<ul class="navbar-nav">
+	    			<li class="nav-item">
+	      				<div class="dropdown pointer">
+						 	<a class="dropdown-toggle nav-link" id="account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    	Account
+						  	</a>
+						  	<div class="dropdown-menu" aria-labelledby="account">
+							    <button class="dropdown-item" type="button" onclick="openAccount()">Settings</button>
+							    <button class="dropdown-item" type="button" onclick="logout()">Log out</button>
+						  	</div>
+					  	</div>
+					</li>
+				</ul>
+  			</div>
+		</nav>
+
+		<div class="container">
+		 	<div class="row">
+		    	<div class="col-lg-3 col-sm-1">
+		    	</div>
+		    	<div class="col-lg-6 com-sm-10">
+				    <div class="container my-md-4">
+				    	<div class="card shadow p-3 mb-5 bg-white rounded">
+    						<h2 class="card-title text-center">Create room</h2>
+							<form>
+							 	<div class="form-group">
+							    	<label for="name">Name and tag:</label>
+							    	<input type="text" onkeyup="search(event)" class="form-control" id="name" placeholder="Search..." autocomplete="off">
+							    	<div class="card" id="results-card">
+							    		<ul class="list-group list-group-flush search-bar" id="results">
+							    		</ul>
+							    	</div>
+							  	</div>
+							  	<div class="form-group">
+							   		<label for="day">Date:</label>
+							   		<div class="row">
+							   			<div class="col">
+							   				<select class="form-control" id="day">
+									      		<option>1</option>
+									     		<option>2</option>
+									      		<option>3</option>
+									      		<option>4</option>
+									      		<option>5</option>
+									      		<option>6</option>
+									      		<option>7</option>
+									      		<option>8</option>
+									      		<option>9</option>
+									      		<option>10</option>
+									      		<option>11</option>
+									      		<option>12</option>
+									      		<option>13</option>
+									      		<option>14</option>
+									      		<option>15</option>
+									      		<option>16</option>
+									      		<option>17</option>
+									      		<option>18</option>
+									      		<option>19</option>
+									      		<option>20</option>
+									      		<option>21</option>
+									      		<option>22</option>
+									      		<option>23</option>
+									      		<option>24</option>
+									      		<option>25</option>
+									      		<option>26</option>
+									      		<option>27</option>
+									      		<option>28</option>
+									      		<option>29</option>
+									      		<option>30</option>
+									      		<option>31</option>
+									    	</select>
+							   			</div>
+							   			<div class="col">
+									    	<select class="form-control" id="month">
+									      		<option>Jan</option>
+									     		<option>Feb</option>
+									      		<option>Mar</option>
+									      		<option>Apr</option>
+									      		<option>May</option>
+									      		<option>Jun</option>
+									      		<option>Jul</option>
+									      		<option>Aug</option>
+									      		<option>Sep</option>
+									      		<option>Oct</option>
+									      		<option>Nov</option>
+									      		<option>Dec</option>
+									    	</select>
+									    </div>
+									    <div class="col">
+									    	<select class="form-control" id="year">
+									      		<option>2019</option>
+									     		<option>2020</option>
+									      		<option>2021</option>
+									      		<option>2022</option>
+									      		<option>2023</option>
+									      		<option>2024</option>
+									      		<option>2025</option>
+									      		<option>2026</option>
+									      		<option>2027</option>
+									      		<option>2028</option>
+									      		<option>2029</option>
+									      		<option>2030</option>
+									    	</select>
+									    </div>
+							    	</div>
+							  	</div>
+							  	<div class="form-group">
+							   		<label for="hour">Time:</label>
+							   		<div class="row">
+							   			<div class="col">
+							   				<select class="form-control" id="hour">
+										      		<option>00</option>
+										     		<option>01</option>
+										      		<option>02</option>
+										      		<option>03</option>
+										      		<option>04</option>
+										      		<option>05</option>
+										      		<option>06</option>
+										      		<option>07</option>
+										      		<option>08</option>
+										      		<option>09</option>
+										      		<option>10</option>
+										      		<option>11</option>
+										      		<option>12</option>
+										      		<option>13</option>
+										      		<option>14</option>
+										      		<option>15</option>
+										      		<option>16</option>
+										      		<option>17</option>
+										      		<option>18</option>
+										      		<option>19</option>
+										      		<option>20</option>
+										      		<option>21</option>
+										      		<option>22</option>
+										      		<option>23</option>
+										    </select>
+							    		</div><p class="text-center font-weight-bolder">:</p>
+							    		<div class="col">
+								    		<select class="form-control" id="minutes">
+										      		<option>00</option>
+										     		<option>05</option>
+										      		<option>10</option>
+										      		<option>15</option>
+										      		<option>20</option>
+										      		<option>25</option>
+										      		<option>30</option>
+										      		<option>35</option>
+										      		<option>40</option>
+										      		<option>45</option>
+										      		<option>50</option>
+										      		<option>55</option>
+										    </select>
+							    		</div>
+							   		</div>
+							   	</div>
+							  	<div class="form-group">
+							    	<label for="position">Position:</label>
+							    	<input type="text" class="form-control" id="position" placeholder="Position" autocomplete="off">
+							  	</div>
+							  	<div class="form-group text-center">
+							  		<button type="submit" class="btn btn-primary" id="create-btn" onclick="createRoom()">Create</button>
+							  	</div>
+							</form>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="col-lg-3 col-sm-1">
+		    	</div>
+		  	</div>
+		</div>
+		<div class="col">
+		
+		<script type="text/javascript" src="scripts/menu.js"></script>
+		<script type="text/javascript" src="scripts/requests.js"></script>
+		<script type="text/javascript" src="scripts/create-room.js"></script>
+		
+	</body>
+
+</html>

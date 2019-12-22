@@ -1,0 +1,35 @@
+html { 
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.background {
+	background-image: url("../images/index.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.transparent {
+	background:rgba(0,0,0,0.5);
+}
+
+.max-height {
+	height: 100%;
+}
+
+.buttons {
+	width: 125px;
+	height: 55px;
+}
+
+.parent {
+	position: relative;
+}
+
+.child {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	width: 80%;
+}

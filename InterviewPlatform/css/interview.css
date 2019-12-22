@@ -1,0 +1,162 @@
+#editor {
+	position: static;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 700;
+	width: 300;
+}
+		
+#wrapper {
+	position: relative;
+}
+		
+#canvas-holder {
+	max-width: 100%
+}
+
+.int-button-wrapper {
+	width: 100%;
+	padding: 10px 10px;
+}
+		
+.int-button {
+	float: left;
+	width: 55px;
+	height: 35px;
+}
+		
+.int-tool-button {
+	float: left;
+	height: 35px;
+	width: 90px;
+}
+		
+.int-button::after {
+	margin-left: 1.5rem
+}
+		
+.int-dropdown-wrapper {
+	min-width: 55px;
+	padding: 0px 0px;
+}
+
+.int-dropdown-item {
+	width: 55px;
+	height: 35px;
+	display: block;
+	margin: 0px auto;
+	border-radius: 0px;
+}
+		
+.mr-right-10 {
+	margin-right: 10px;
+}
+		
+#canvas {
+	display: block;
+	margin: 0 auto;
+	border: 1px solid black;
+	min-width: 500;
+	min-height: 500;
+	max-width: 1500;
+	max-height: 900;
+}
+
+.int-clear-col {
+	position: static;
+}
+		
+.mr-bottom-10 {
+	margin-bottom: 10px;
+}
+		
+.int-my-container {
+	text-align: center;
+}
+
+.int-call-btn {
+	width: 13%;
+}
+
+.int-chat-box {
+	width: 285px;
+}
+
+.send-button {
+	width: 100%;
+	height: 30px;
+}
+
+.message-box {
+	height: 30px;
+	width: 100%;
+}
+
+.messages {
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: lightgrey;
+	height: 290px;
+	overflow-y: scroll;
+}
+
+.fixed-chatbox{
+	display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+}
+
+.form-margin {
+	margin-block-end: 0px;
+}
+
+.parent {
+	position: relative;
+}
+
+.message-receive {
+	display: block;
+	word-wrap: break-word;
+	margin-bottom: 5px;
+	width: 80%;
+	border-radius: 5% 5% 5% 0%;
+}
+
+.message-send {
+	display: block;
+	word-wrap: break-word;
+	position: static;
+	width: 80%;
+	margin-bottom: 5px;	
+	border-radius: 5% 5% 0% 5%;
+}
+
+.no-border-radius {
+	border-radius: 0% 0% 0% 0%;
+}
+
+.div-wrapper-send {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.div-wrapper-receive {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.message-paragraph {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	line-height: 100%;
+}
+
+.my-grey-color {
+	background-color: #E8E8E8 !important;
+}

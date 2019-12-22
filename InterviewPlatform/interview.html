@@ -1,0 +1,235 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+		<script src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+		<script src="src-noconflict/ace.js"></script>
+		<script src="https://kit.fontawesome.com/59c381a832.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/interview.css">
+		<link rel="stylesheet" type="text/css" href="css/pointer.css">
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand text-primary my-md-2" href="#">My Website</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+ 			 </button>
+
+      		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+      				<li class="nav-item">
+        				<a class="nav-link" href="home.html">Home</span></a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="create-room.html">Create room</a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="create-review.html" id="menu-reviews">Create review</a>
+      				</li>
+    			</ul>
+    			<ul class="navbar-nav">
+	    			<li class="nav-item">
+	      				<div class="dropdown pointer">
+						 	<a class="dropdown-toggle nav-link" id="account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    	Account
+						  	</a>
+						  	<div class="dropdown-menu" aria-labelledby="account">
+							    <button class="dropdown-item" type="button" onclick="openAccount()">Settings</button>
+							    <button class="dropdown-item" type="button" onclick="logout()">Log out</button>
+						  	</div>
+					  	</div>
+					</li>
+				</ul>
+  			</div>
+		</nav>
+
+		<div id="call">
+			<!-- <input id="username-to-call" placeholder="Username to call" /> -->
+			<div class="text-center py-3">
+				<button class="btn btn-success text-wrap text-break btn-lg int-call-btn" id="call">
+					<span style="font-size: 1.5em;">
+						<i class="fas fa-phone"></i>
+					</span>
+				</button>
+				<button class="btn btn-danger text-wrap text-break btn-lg int-call-btn" id="close-call">
+					<span style="font-size: 1.5em;">
+						<i class="fas fa-phone-slash"></i>
+					</span>
+				</button>
+				<button class="btn btn-warning text-wrap btn-lg int-call-btn" id="reconnect">
+					<span style="font-size: 1.5em;">
+						<i class="fas fa-sync-alt"></i>
+					</span>
+				</button>
+			</div>
+			<div class="container">				
+				<div class="row my-md-3 mx-md-3">
+					<div class="col-sm">
+					</div>
+					<div class="col-12 int-clear-col" id="mid-column">
+						<nav>
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<a class="nav-item nav-link" id="nav-editor-tab" data-toggle="tab" href="#nav-editor" role="tab" aria-controls="nav-editor" aria-selected="false">
+									Code Editor
+									<span style="font-size: 1.25em;">
+										<i class="fas fa-code"></i>
+									</span>
+								</a>
+								<a class="nav-item nav-link" id="nav-canvas-tab" data-toggle="tab" href="#nav-canvas" role="tab" aria-controls="nav-canvas" aria-selected="false">
+									Canvas
+									<span style="font-size: 1.25em;">
+										<i class="fas fa-paint-brush"></i>
+									</span>
+								</a>
+								<a class="nav-item nav-link" id="nav-camera-tab" data-toggle="tab" href="#nav-camera" role="tab" aria-controls="nav-camera" aria-selected="false">
+									Camera
+									<span style="font-size: 1.25em;">
+										<i class="fas fa-video"></i>
+									</span>
+								</a>
+							</div>
+						</nav>
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade" id="nav-editor" role="tabpanel" aria-labelledby="nav-editor-tab">
+								<div class="card my-md-3 mx-md-3" id="wrapper" >
+									<pre id="editor"></pre>
+								</div>						
+							</div>
+							<div class="tab-pane fade my-md-3 mx-md-3" id="nav-canvas" role="tabpanel" aria-labelledby="nav-canvas-tab">
+								<div class="int-button-wrapper clearfix">
+									<div class="dropdown">
+										<button class="btn btn-secondary dropdown-toggle int-button mr-right-10" type="button" id="colorPicker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										</button>
+										<div class="dropdown-menu int-dropdown-wrapper" aria-labelledby="colorPicker">
+											<button type="button" class="btn btn-secondary int-dropdown-item" onclick="changeColor(1)" id="grey">&nbsp;</button>
+											<button type="button" class="btn btn-primary int-dropdown-item" onclick="changeColor(2)" id="blue">&nbsp;</button>
+											<button type="button" class="btn btn-success int-dropdown-item" onclick="changeColor(3)" id="green">&nbsp;</button>
+											<button type="button" class="btn btn-danger int-dropdown-item" onclick="changeColor(4)" id="red">&nbsp;</button>
+											<button type="button" class="btn btn-warning int-dropdown-item" onclick="changeColor(5)" id="yellow">&nbsp;</button>
+										</div>
+									</div>
+										
+									<div class="dropdown">
+										<button class="btn dropdown-toggle int-tool-button mr-right-10" type="button" id="brushPicker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												1 px
+											</button>
+										<div class="dropdown-menu int-dropdown-wrapper" aria-labelledby="brushPicker">
+											<button type="button" class="btn dropdown-item" onclick="changeSize(1)" id="drawSize1">
+												1 px
+											</button>
+											<button type="button" class="btn dropdown-item" onclick="changeSize(2)" id="drawSize2">
+												3 px
+											</button>
+											<button type="button" class="btn dropdown-item" onclick="changeSize(3)" id="drawSize3">
+												5 px
+											</button>
+											<button type="button" class="btn dropdown-item" onclick="changeSize(4)" id="drawSize4">
+												7 px
+											</button>
+											<button type="button" class="btn dropdown-item" onclick="changeSize(5)" id="drawSize5">
+												10 px
+											</button>
+										</div>
+									</div>
+										
+									<div class="dropdown">
+										<button class="btn dropdown-toggle int-tool-button mr-right-10" type="button" id="toolPicker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Marker
+										</button>
+										<div class="dropdown-menu int-dropdown-wrapper" aria-labelledby="toolPicker">
+											<button type="button" class="btn dropdown-item" onclick="changeTool(1)" id="drawSize1">Marker</button>
+											<button type="button" class="btn dropdown-item" onclick="changeTool(2)" id="drawSize2">Eraser</button>
+										</div>
+									</div>
+										
+									<button class="btn btn-info" onclick="clearCanvas()">
+										Clear
+									</button>
+								</div>													
+								<div class="int-card-wrapper" id="canvas-holder">																
+									<canvas id="canvas" width="1000" height="550"></canvas>
+								</div>
+								<!--<iframe src="canvas.html" height="100%"></iframe>-->	
+							</div>
+							<div class="tab-pane fade my-md-3 mx-md-3" id="nav-camera" role="tabpanel" aria-labelledby="nav-camera-tab">
+							<div class="row">
+								<div class="col-12 col-sm-6 col-md-8 text-center">
+									<video id="remote" width="100%" autoplay></video>
+								</div>
+								<div class="col-6 col-md-4 text-center">
+									<div class="row my-md-3 mx-md-3" height="75%">
+										<div class="container int-my-container">
+											<div class="mr-bottom-10">
+												<button type="button" class="btn" onClick="microphone()">
+													<span style="font-size: 2em;">
+														<i class="fas fa-microphone-slash"></i>
+													</span>
+												</button>
+											</div>
+											<div class="mr-bottom-10">
+												<button type="button" class="btn" onClick="camera()">
+													<span style="font-size: 2em;">
+														<i class="fas fa-video-slash"></i>
+													</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="row my-md-3 mx-md-3" height="25%">
+										<video id="local" width="100%" autoplay></video>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+					</div>
+				</div>
+			</div>
+
+			<div class="container fixed-chatbox">
+			 	<div class="row">
+			    	<div class="col-sm">
+			    	</div>
+			    	<div class="col-sm">
+			    	</div>
+			    	<div class="col-sm">
+			    		<div class="card int-chat-box" id="chat">
+							<div class="card-header text-left pointer" data-toggle="collapse" data-target="#chat-interface" aria-expanded="true" aria-controls="chat-interface" id="chat-header">Name</div>
+							<div class="card-body py-0 px-0">
+								<div class="collapse" id="chat-interface">
+						    		<div class="messages parent my-md-0" id="messages"></div>
+							    	<form class="form-margin">
+									    <div class="input-group">
+									       	<input type="text" class="form-control no-border-radius" id="userMessage" placeholder="Type a message...">
+									      	<div class="input-group-append">
+									      		<button class="btn btn-primary no-border-radius" onclick="sendChatMessage(event)"><i class="fas fa-paper-plane"></i></button>
+									      	</div>
+									    </div>
+								    </form>
+								</div>
+							</div>
+						</div>
+			    	</div>
+			  	</div>
+			</div>
+
+		</div>
+
+		
+
+		<script type="text/javascript" src="scripts/menu.js"></script>
+		<script type="text/javascript" src="scripts/interview.js"></script>
+		
+	</body>
+
+</html>

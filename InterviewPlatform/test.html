@@ -1,0 +1,136 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+		<script src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+		<script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+
+		<style>
+			.int-chat-box {
+				width: 225px;
+			}
+
+			.send-button {
+				width: 100%;
+				height: 30px;
+			}
+
+			.message-box {
+				height: 30px;
+				width: 100%;
+			}
+
+			.messages {
+				border-style: solid;
+				border-width: 1px 1px 2px 1px;
+				border-color: lightgrey;
+				height: 200px;
+				overflow-y: scroll;
+			}
+
+			.fixed-chatbox{
+				display: flex;
+			    justify-content: flex-end;
+			    position: fixed;
+			    bottom: 0;
+			    right: 20px;
+			}
+
+			.form-margin {
+				margin-block-end: 0px;
+			}
+
+			.parent {
+				position: relative;
+			}
+
+			.message-receive {
+				display: block;
+				word-wrap: break-word;
+				margin-bottom: 5px;
+				width: 90%;
+				border-radius: 5% 5% 5% 0%;
+			}
+
+			.message-send {
+				display: block;
+				word-wrap: break-word;
+				position: static;
+				width: 90%;
+				margin-bottom: 5px;	
+				border-radius: 5% 5% 0% 5%;
+			}
+
+			.no-border-radius {
+				border-radius: 0% 0% 0% 0%;
+			}
+
+			.div-wrapper-send {
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			.div-wrapper-receive {
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			.message-paragraph {
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				margin-top: 5px;
+				line-height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+
+		<div class="container fixed-chatbox">
+		 	<div class="row">
+		    	<div class="col-sm">
+		    	</div>
+		    	<div class="col-sm">
+		    	</div>
+		    	<div class="col-sm">
+		    		<div class="card int-chat-box" id="chat">
+						<div class="card-header text-left" data-toggle="collapse" data-target="#chat-interface" aria-expanded="true" aria-controls="chat-interface">Name</div>
+						<div class="card-body py-0 px-0">
+							<div class="collapse" id="chat-interface">
+				    		<div class="messages parent my-md-0" id="messages">
+				    			<div class="div-wrapper-receive">
+				    				<div class="message-receive bg-danger"><p class="message-paragraph">Message1 Message1 Message1</p></div>
+				    			</div>
+				    			<div class="div-wrapper-send">
+					    			<div class="message-send bg-primary text-light"><p class="message-paragraph">Message2 Message2 Message2</p></div>
+								</div>
+								<div class="div-wrapper-send">
+				    				<div class="message-receive bg-danger"><p class="message-paragraph">Message1 Message1 Message1</p></div>
+				    			</div>
+				    			<div class="div-wrapper-send">
+				    				<div class="message-send bg-primary text-light"><p class="message-paragraph">Message2 Message2</p></div>
+				    			</div>
+				    		</div>
+					    	<form class="form-margin">
+							    <div class="input-group">
+							       	<input type="text" class="form-control no-border-radius" id="inlineFormInputGroupUsername" placeholder="Type a message...">
+							      	<div class="input-group-append">
+							      		<button class="btn btn-primary no-border-radius">Send</button>
+							      	</div>
+							    </div>
+						    </form>
+						</div>
+						</div>
+					</div>
+		    	</div>
+		  	</div>
+		</div>			
+						
+
+	</body>
+
+</html>
